@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()">
+        <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Catálogo</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="list-content">
+  <div class="content-header">
+    <h2 class="section-title">Todos los Productos</h2>
+    <p class="section-subtitle">{{ products().length }} productos disponibles</p>
+  </div>
+
+  @if (products().length === 0) {
+    <div class="empty-state">
+      <ion-icon name="images-outline" class="empty-icon"></ion-icon>
+      <p>Cargando productos...</p>
+      <ion-spinner name="dots"></ion-spinner>
+    </div>
+  }
+
+  <div class="products-grid">
+    @for (product of products(); track product.id) {
+      <ion-card class="product-card no-click">
+        <div class="card-image-wrapper">
+          <img
+            [src]="product.imageUrl"
+            [alt]="product.name"
+            class="card-image"
+            (error)="onImageError($event)"
+          />
+        </div>
+        <ion-card-header>
+          <ion-card-title class="card-title">{{ product.name }}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <p class="card-description">{{ product.description }}</p>
+        </ion-card-content>
+      </ion-card>
+    }
+  </div>
+
+  <ion-infinite-scroll (ionInfinite)="loadMore($event)" [disabled]="!hasMore()">
+    <ion-infinite-scroll-content
+      loadingSpinner="crescent"
+      loadingText="Cargando más productos..."
+    ></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

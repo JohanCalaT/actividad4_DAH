@@ -1,0 +1,73 @@
+/*
+ * App Global CSS - Store App
+ */
+
+/* Core Ionic */
+@import "@ionic/angular/css/core.css";
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import "@ionic/angular/css/display.css";
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* CSS Custom Properties - Design System */
+:root {
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --color-primary: #a78bfa;
+  --color-primary-dark: #7c3aed;
+  --color-accent: #60a5fa;
+  --color-danger: #f87171;
+  --color-success: #34d399;
+  --color-bg: #0f0c29;
+  --color-surface: rgba(255, 255, 255, 0.06);
+  --color-border: rgba(255, 255, 255, 0.1);
+  --color-text: #ffffff;
+  --color-text-muted: rgba(255, 255, 255, 0.5);
+  --radius-card: 20px;
+  --radius-btn: 14px;
+}
+
+/* Global font */
+* {
+  font-family: var(--font-family);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Ionic dark override always */
+:root {
+  --ion-background-color: var(--color-bg);
+  --ion-text-color: var(--color-text);
+  --ion-color-primary: var(--color-primary);
+  --ion-color-primary-shade: var(--color-primary-dark);
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-danger: var(--color-danger);
+  --ion-color-danger-shade: #dc2626;
+  --ion-color-danger-contrast: #ffffff;
+  --ion-color-success: var(--color-success);
+  --ion-color-success-shade: #059669;
+  --ion-color-success-contrast: #000000;
+  --ion-toolbar-background: rgba(15, 12, 41, 0.98);
+  --ion-tab-bar-background: rgba(15, 12, 41, 0.95);
+}
+
+/* Custom Alert Styles */
+.custom-alert {
+  --background: #1e1b4b;
+  --color: #fff;
+}
+.custom-alert .alert-title { color: #fff; font-weight: 700; }
+.custom-alert .alert-message { color: rgba(255,255,255,0.65); }
+.custom-alert .alert-button { color: var(--color-primary); font-weight: 600; }
+.custom-alert .alert-button.ion-color-danger { color: var(--color-danger) !important; }
+
+/* Custom Toast with cleaner look */
+.custom-toast {
+  --border-radius: 14px;
+  --box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+  font-weight: 500;
+}

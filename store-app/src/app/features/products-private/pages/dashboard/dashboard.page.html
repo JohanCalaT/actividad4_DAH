@@ -1,0 +1,84 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Mis Productos</ion-title>
+    <ion-buttons slot="end">
+      <ion-button id="logout-btn" (click)="confirmLogout()">
+        <ion-icon slot="icon-only" name="log-out-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="dashboard-content">
+  <div class="content-header">
+    <h2 class="section-title">Tu Inventario</h2>
+    <p class="section-subtitle">
+      {{ products().length }} producto{{ products().length !== 1 ? 's' : '' }}
+    </p>
+  </div>
+
+  @if (products().length === 0) {
+    <div class="empty-state">
+      <ion-icon name="cube-outline" class="empty-icon"></ion-icon>
+      <h3 class="empty-title">Sin productos todavía</h3>
+      <p class="empty-text">Añade tu primer producto pulsando el botón +</p>
+    </div>
+  }
+
+  <div class="products-list">
+    @for (product of products(); track product.id) {
+      <ion-card class="product-card">
+        <div class="card-image-wrapper">
+          <img
+            [src]="product.imageUrl"
+            [alt]="product.name"
+            class="card-image"
+            (error)="onImageError($event)"
+          />
+        </div>
+        <div class="card-body">
+          <div class="card-info">
+            <h3 class="card-title">{{ product.name }}</h3>
+            <p class="card-description">{{ product.description }}</p>
+          </div>
+          <div class="card-actions">
+            <ion-button
+              fill="clear"
+              class="action-btn view-btn"
+              (click)="viewDetail(product.id!)"
+            >
+              <ion-icon slot="icon-only" name="eye-outline"></ion-icon>
+            </ion-button>
+            <ion-button
+              fill="clear"
+              class="action-btn edit-btn"
+              (click)="goToEdit(product.id!)"
+            >
+              <ion-icon slot="icon-only" name="create-outline"></ion-icon>
+            </ion-button>
+            <ion-button
+              fill="clear"
+              class="action-btn delete-btn"
+              (click)="confirmDelete(product.id!, product.name)"
+            >
+              <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+            </ion-button>
+          </div>
+        </div>
+      </ion-card>
+    }
+  </div>
+
+  <ion-infinite-scroll (ionInfinite)="loadMore($event)" [disabled]="!hasMore()">
+    <ion-infinite-scroll-content
+      loadingSpinner="crescent"
+      loadingText="Cargando tus productos..."
+    ></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button id="add-product-btn" (click)="goToAdd()">
+      <ion-icon name="add-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

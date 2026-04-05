@@ -1,0 +1,48 @@
+# Root .gitignore for Actividad 4 (Ionic + Firebase)
+
+# Node dependencies
+node_modules/
+.angular/
+
+# Build outputs
+www/
+dist/
+
+# Firebase
+.firebase/
+firebase-debug.log*
+firestore-debug.log*
+ui-debug.log*
+
+# IDEs and OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.swp
+
+# Project specific temporary and data files
+test_output.txt
+test_results.json
+test_results_utf8.json
+seed_output.txt
+tar_list.txt
+test.tar.gz
+uids.txt
+users.csv
+user*.json
+seed_output.txt
+create-users.js
+extract-starter.js
+list-firestore.js
+seed-firestore.js
+create-users.js
+extract-starter.js
+list-firestore.js
+seed-firestore.js
+*.log
+
+# Scripts and private docs
+GUION_VIDEO.md
+ACTA_REUNION.md
+README-guia.md

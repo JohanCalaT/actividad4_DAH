@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()">
+        <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Detalle</ion-title>
+    @if (isOwner()) {
+      <ion-buttons slot="end">
+        <ion-button (click)="editProduct()">
+          <ion-icon slot="icon-only" name="create-outline"></ion-icon>
+        </ion-button>
+        <ion-button (click)="confirmDelete()" color="danger">
+          <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    }
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="detail-content">
+  @if (product()) {
+    <div class="detail-wrapper">
+      <div class="hero-image-wrapper">
+        <img
+          [src]="product()!.imageUrl"
+          [alt]="product()!.name"
+          class="hero-image"
+          (error)="onImageError($event)"
+        />
+        <div class="image-overlay"></div>
+      </div>
+      <div class="detail-body">
+        <h1 class="product-name">{{ product()!.name }}</h1>
+        <ion-chip class="user-chip">
+          <ion-icon name="person-outline"></ion-icon>
+          <ion-label class="chip-label">{{ product()?.userEmail || product()?.userId }}</ion-label>
+        </ion-chip>
+        <div class="divider"></div>
+        <p class="product-description">{{ product()!.description }}</p>
+      </div>
+    </div>
+  } @else {
+    <div class="loading-state">
+      <div class="loading-spinner-custom"></div>
+    </div>
+  }
+</ion-content>

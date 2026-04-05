@@ -1,0 +1,173 @@
+.register-content {
+  --background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+}
+
+ion-toolbar {
+  --background: transparent;
+  --color: #fff;
+}
+
+.register-wrapper {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 85vh;
+  padding: 1rem 1.5rem;
+}
+
+.register-card {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 28px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 420px;
+}
+
+.register-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.logo-ring {
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  box-shadow: 0 8px 32px rgba(96, 165, 250, 0.35);
+}
+
+.logo-ring ion-icon {
+  font-size: 1.8rem;
+  color: #fff;
+}
+
+.register-title {
+  color: #fff;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 0 0 0.25rem;
+}
+
+.register-subtitle {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.field-label {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.field-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.field-icon {
+  position: absolute;
+  left: 1rem;
+  color: rgba(255, 255, 255, 0.35);
+  font-size: 1.1rem;
+  z-index: 1;
+}
+
+.field-input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1.5px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 0.85rem 1rem 0.85rem 2.75rem;
+  color: #fff;
+  font-size: 0.95rem;
+  outline: none;
+}
+
+.field-input:focus {
+  border-color: #60a5fa;
+  background: rgba(96, 165, 250, 0.08);
+}
+
+.field-group.field-error .field-input {
+  border-color: #f87171;
+}
+
+.field-error-msg {
+  color: #f87171;
+  font-size: 0.75rem;
+  padding-left: 0.25rem;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 0.75rem;
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.35);
+  cursor: pointer;
+  display: flex;
+  font-size: 1.1rem;
+}
+
+.submit-btn {
+  --background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  --border-radius: 14px;
+  --box-shadow: 0 8px 30px rgba(96, 165, 250, 0.4);
+  --color: #fff;
+  --padding-top: 16px;
+  --padding-bottom: 16px;
+  margin-top: 0.5rem;
+  font-weight: 700;
+}
+
+.bg-orbs {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+}
+
+.orb-1 {
+  width: 300px;
+  height: 300px;
+  background: rgba(96, 165, 250, 0.2);
+  top: -60px;
+  right: -60px;
+}
+
+.orb-2 {
+  width: 250px;
+  height: 250px;
+  background: rgba(167, 139, 250, 0.15);
+  bottom: -60px;
+  left: -40px;
+}

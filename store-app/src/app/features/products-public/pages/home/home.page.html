@@ -1,0 +1,22 @@
+<ion-content class="home-content">
+  <div class="hero-wrapper">
+    <div class="hero-badge">Store App</div>
+    <h1 class="hero-title">Tu tienda,<br /><span class="highlight">en un solo lugar</span></h1>
+    <p class="hero-subtitle">Explora el catálogo de productos o accede a tu panel privado para gestionar tu inventario.</p>
+    <div class="cta-buttons">
+      <ion-button class="cta-primary" expand="block" (click)="goToProducts()">
+        <ion-icon slot="start" name="grid-outline"></ion-icon>
+        Ver Catálogo
+      </ion-button>
+      <ion-button class="cta-secondary" expand="block" fill="outline" (click)="goToLogin()">
+        <ion-icon slot="start" name="log-in-outline"></ion-icon>
+        Acceder
+      </ion-button>
+    </div>
+  </div>
+  <div class="floating-shapes">
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
+  </div>
+</ion-content>
